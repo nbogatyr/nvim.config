@@ -24,7 +24,7 @@ return {
   },
   keys = {
     {
-      '<leader>taa',
+      '<leader>ta',
       function()
         vim.g.minianimate_disable = not vim.g.minianimate_disable
       end,
