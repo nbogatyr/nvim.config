@@ -40,5 +40,12 @@ return {
       desc = 'Jumpy to the previous TODO comment',
       mode = 'n',
     },
+    {
+      '<leader>sT',
+      function()
+        Snacks.picker.todo_comments()
+      end,
+      desc = 'Search TODO comments',
+    },
   },
 }
