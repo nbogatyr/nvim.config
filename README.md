@@ -11,4 +11,5 @@ This is a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 - [fdfind](https://github.com/sharkdp/fd?tab=readme-ov-file#installation)
 - A [Nerd Font](https://www.nerdfonts.com/)
+- [lzaygit](https://github.com/jesseduffield/lazygit)
 
