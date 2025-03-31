@@ -30,7 +30,7 @@ return {
         vim.cmd('CBccbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create CC Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbclb',
@@ -38,7 +38,7 @@ return {
         vim.cmd('CBccbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create CL Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbcrb',
@@ -46,7 +46,7 @@ return {
         vim.cmd('CBcrbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create CR Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cblcb',
@@ -54,7 +54,7 @@ return {
         vim.cmd('CBlcbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create LC Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbllb',
@@ -62,7 +62,7 @@ return {
         vim.cmd('CBllbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create LL Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cblrb',
@@ -70,7 +70,7 @@ return {
         vim.cmd('CBlrbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create LR Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbrrb',
@@ -78,7 +78,7 @@ return {
         vim.cmd('CBrrbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create RC Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbrlb',
@@ -86,7 +86,7 @@ return {
         vim.cmd('CBrlbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create RL Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbrcb',
@@ -94,7 +94,7 @@ return {
         vim.cmd('CBrcbox ' .. get_comment_box_default_style())
       end,
       desc = 'Create RC Comment Box',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
 
     -- Keymaps for lines
@@ -104,7 +104,7 @@ return {
         vim.cmd('CBccline ' .. get_comment_box_default_style())
       end,
       desc = 'Create CC Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbcll',
@@ -112,7 +112,7 @@ return {
         vim.cmd('CBclline ' .. get_comment_box_default_style())
       end,
       desc = 'Create CL Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbcrl',
@@ -120,7 +120,7 @@ return {
         vim.cmd('CBcrline ' .. get_comment_box_default_style())
       end,
       desc = 'Create CR Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cblcl',
@@ -128,7 +128,7 @@ return {
         vim.cmd('CBlcline ' .. get_comment_box_default_style())
       end,
       desc = 'Create LC Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cblll',
@@ -136,7 +136,7 @@ return {
         vim.cmd('CBllline ' .. get_comment_box_default_style())
       end,
       desc = 'Create LL Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cblrl',
@@ -144,7 +144,7 @@ return {
         vim.cmd('CBlrline ' .. get_comment_box_default_style())
       end,
       desc = 'Create LR Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbrrl',
@@ -152,7 +152,7 @@ return {
         vim.cmd('CBrrline ' .. get_comment_box_default_style())
       end,
       desc = 'Create RC Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbrll',
@@ -160,7 +160,7 @@ return {
         vim.cmd('CBrlline ' .. get_comment_box_default_style())
       end,
       desc = 'Create RL Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
     {
       '<leader>cbrcl',
@@ -168,7 +168,7 @@ return {
         vim.cmd('CBrcline ' .. get_comment_box_default_style())
       end,
       desc = 'Create RC Comment Line',
-      mode = { 'n', 'v', 'i' },
+      mode = { 'n', 'v' },
     },
 
     {
