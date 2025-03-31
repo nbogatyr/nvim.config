@@ -12,4 +12,3 @@ This is a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
 - [fdfind](https://github.com/sharkdp/fd?tab=readme-ov-file#installation)
 - A [Nerd Font](https://www.nerdfonts.com/)
 
-
