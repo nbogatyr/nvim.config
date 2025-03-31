@@ -1,6 +1,6 @@
--- [[ Autocommands ]]
---  See `:help lua-guide-autocommands`
-
+-- ╭─────────────────────────────────────────────────────────╮
+-- │                      Autocommands                       │
+-- ╰─────────────────────────────────────────────────────────╯
 -- All the auto command groups are gonna have 'personal_' at the start to easily find them
 local function augroup(name)
   return vim.api.nvim_create_augroup('personal_' .. name, { clear = true })

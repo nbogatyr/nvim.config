@@ -1,5 +1,6 @@
--- Set <space> as the leader key - See `:help mapleader`
-
+-- ╭─────────────────────────────────────────────────────────╮
+-- │                Vim (non-plugin) keymaps                 │
+-- ╰─────────────────────────────────────────────────────────╯
 local keymap = vim.keymap.set
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal

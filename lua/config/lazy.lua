@@ -1,4 +1,6 @@
--- Bootstrap lazy.nvim
+-- ╭─────────────────────────────────────────────────────────╮
+-- │                     Lazy.nvim setup                     │
+-- ╰─────────────────────────────────────────────────────────╯
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
@@ -21,7 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
--- Setup lazy.nvim
 require('lazy').setup {
 
   spec = {
@@ -34,3 +35,15 @@ require('lazy').setup {
   -- automatically check for plugin updates
   checker = { enabled = true },
 }
+
+-- Add a keybind for lazy
+vim.keymap.set('n', '<leader>L', '<cmd>Lazy<cr>', { desc = 'Open Lazy' })
+
+-- For debugging purposes, taken from the docs for snacks.debug
+_G.dd = function(...)
+  Snacks.debug.inspect(...)
+end
+_G.bt = function()
+  Snacks.debug.backtrace()
+end
+vim.print = _G.dd

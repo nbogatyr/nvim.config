@@ -1,9 +1,12 @@
--- [[ Globals ]]
+-- ╭─────────────────────────────────────────────────────────╮
+-- │                   Vim builtin globals                   │
+-- ╰─────────────────────────────────────────────────────────╯
 vim.g.python3_host_prog = '~/.venv/python3.11.2/bin/python'
 
--- [[ Setting options ]]
--- See `:help vim.opt`
---  For more options, you can see `:help option-list`
+-- ╭─────────────────────────────────────────────────────────╮
+-- │                       Vim options                       │
+-- ╰─────────────────────────────────────────────────────────╯
+vim.opt.sessionoptions = 'buffers,curdir,folds,help,tabpages,winsize,terminal,winpos'
 
 -- Make line numbers default
 vim.opt.number = true
