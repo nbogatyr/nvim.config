@@ -48,6 +48,14 @@ return {
       picker = {
         layout = "custom_telescope_default_layout",
 
+        files = {
+          follow = true,
+        },
+
+        grep = {
+          follow = true,
+        },
+
         layouts = {
           custom_telescope_default_layout = {
             layout = {
@@ -126,6 +134,38 @@ return {
             wrap = false,
           },
         },
+      },
+    },
+
+    keys = {
+      {
+        "<leader>ff",
+        function()
+          Snacks.picker.files({ follow = true })
+        end,
+        desc = "Find Files",
+      },
+      {
+        "<leader>/",
+        function()
+          Snacks.picker.grep({ follow = true })
+        end,
+        desc = "Grep",
+      },
+      {
+        "<leader>sg",
+        function()
+          Snacks.picker.grep({ follow = true })
+        end,
+        desc = "Grep",
+      },
+      {
+        "<leader>sw",
+        function()
+          Snacks.picker.grep_word({ follow = true })
+        end,
+        desc = "Visual selection or word",
+        mode = { "n", "x" },
       },
     },
   },
