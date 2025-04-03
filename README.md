@@ -3,7 +3,7 @@
 ## What is this?
 
 Repository for my personal nvim config.
-This is a fork of [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+This is a customized LazyVim install
 
 ## Dependencies
 

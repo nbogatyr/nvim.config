@@ -1,34 +1,18 @@
 return {
-  'echasnovski/mini.animate',
-  version = false,
-  lazy = false,
-  enabled = true,
-  event = 'VimEnter',
-  opts = {
 
-    cursor = {
-      enable = true,
-    },
-    scroll = {
-      enable = false,
-    },
-    resize = {
-      enable = true,
-    },
-    open = {
-      enable = true,
-    },
-    close = {
-      enable = true,
-    },
-  },
-  keys = {
-    {
-      '<leader>ta',
-      function()
-        vim.g.minianimate_disable = not vim.g.minianimate_disable
+  "echasnovski/mini.animate",
+  enabled = true,
+
+  opts = function(_, opts)
+    opts.scroll.enable = false
+    Snacks.toggle({
+      name = "Mini Animate",
+      get = function()
+        return not vim.g.minianimate_disable
       end,
-      desc = 'Toggle All Mini Animations',
-    },
-  },
+      set = function(state)
+        vim.g.minianimate_disable = not state
+      end,
+    }):map("<leader>uB")
+  end,
 }

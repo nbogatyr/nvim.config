@@ -3,7 +3,7 @@ local get_comment_box_default_style = function()
 end
 
 return {
-  'LudoPinelli/comment-box.nvim',
+  "LudoPinelli/comment-box.nvim",
   version = false,
   lazy = false,
 
@@ -12,7 +12,7 @@ return {
   end,
 
   opts = {
-    comment_style = 'line',
+    comment_style = "line",
 
     -- Don't put lines around the comment boxes
     outer_blank_lines_above = false,
@@ -25,184 +25,184 @@ return {
 
   keys = {
     {
-      '<leader>cbccb',
+      "<leader>cbccb",
       function()
-        vim.cmd('CBccbox ' .. get_comment_box_default_style())
+        vim.cmd("CBccbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create CC Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create CC Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbclb',
+      "<leader>cbclb",
       function()
-        vim.cmd('CBccbox ' .. get_comment_box_default_style())
+        vim.cmd("CBccbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create CL Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create CL Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbcrb',
+      "<leader>cbcrb",
       function()
-        vim.cmd('CBcrbox ' .. get_comment_box_default_style())
+        vim.cmd("CBcrbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create CR Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create CR Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cblcb',
+      "<leader>cblcb",
       function()
-        vim.cmd('CBlcbox ' .. get_comment_box_default_style())
+        vim.cmd("CBlcbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create LC Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create LC Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbllb',
+      "<leader>cbllb",
       function()
-        vim.cmd('CBllbox ' .. get_comment_box_default_style())
+        vim.cmd("CBllbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create LL Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create LL Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cblrb',
+      "<leader>cblrb",
       function()
-        vim.cmd('CBlrbox ' .. get_comment_box_default_style())
+        vim.cmd("CBlrbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create LR Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create LR Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbrrb',
+      "<leader>cbrrb",
       function()
-        vim.cmd('CBrrbox ' .. get_comment_box_default_style())
+        vim.cmd("CBrrbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create RC Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create RC Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbrlb',
+      "<leader>cbrlb",
       function()
-        vim.cmd('CBrlbox ' .. get_comment_box_default_style())
+        vim.cmd("CBrlbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create RL Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create RL Comment Box",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbrcb',
+      "<leader>cbrcb",
       function()
-        vim.cmd('CBrcbox ' .. get_comment_box_default_style())
+        vim.cmd("CBrcbox " .. get_comment_box_default_style())
       end,
-      desc = 'Create RC Comment Box',
-      mode = { 'n', 'v' },
+      desc = "Create RC Comment Box",
+      mode = { "n", "v" },
     },
 
     -- Keymaps for lines
     {
-      '<leader>cbccl',
+      "<leader>cbccl",
       function()
-        vim.cmd('CBccline ' .. get_comment_box_default_style())
+        vim.cmd("CBccline " .. get_comment_box_default_style())
       end,
-      desc = 'Create CC Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create CC Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbcll',
+      "<leader>cbcll",
       function()
-        vim.cmd('CBclline ' .. get_comment_box_default_style())
+        vim.cmd("CBclline " .. get_comment_box_default_style())
       end,
-      desc = 'Create CL Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create CL Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbcrl',
+      "<leader>cbcrl",
       function()
-        vim.cmd('CBcrline ' .. get_comment_box_default_style())
+        vim.cmd("CBcrline " .. get_comment_box_default_style())
       end,
-      desc = 'Create CR Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create CR Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cblcl',
+      "<leader>cblcl",
       function()
-        vim.cmd('CBlcline ' .. get_comment_box_default_style())
+        vim.cmd("CBlcline " .. get_comment_box_default_style())
       end,
-      desc = 'Create LC Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create LC Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cblll',
+      "<leader>cblll",
       function()
-        vim.cmd('CBllline ' .. get_comment_box_default_style())
+        vim.cmd("CBllline " .. get_comment_box_default_style())
       end,
-      desc = 'Create LL Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create LL Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cblrl',
+      "<leader>cblrl",
       function()
-        vim.cmd('CBlrline ' .. get_comment_box_default_style())
+        vim.cmd("CBlrline " .. get_comment_box_default_style())
       end,
-      desc = 'Create LR Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create LR Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbrrl',
+      "<leader>cbrrl",
       function()
-        vim.cmd('CBrrline ' .. get_comment_box_default_style())
+        vim.cmd("CBrrline " .. get_comment_box_default_style())
       end,
-      desc = 'Create RC Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create RC Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbrll',
+      "<leader>cbrll",
       function()
-        vim.cmd('CBrlline ' .. get_comment_box_default_style())
+        vim.cmd("CBrlline " .. get_comment_box_default_style())
       end,
-      desc = 'Create RL Comment Line',
-      mode = { 'n', 'v' },
+      desc = "Create RL Comment Line",
+      mode = { "n", "v" },
     },
     {
-      '<leader>cbrcl',
+      "<leader>cbrcl",
       function()
-        vim.cmd('CBrcline ' .. get_comment_box_default_style())
+        vim.cmd("CBrcline " .. get_comment_box_default_style())
       end,
-      desc = 'Create RC Comment Line',
-      mode = { 'n', 'v' },
-    },
-
-    {
-      '<leader>cbd',
-      function()
-        vim.cmd('CBd ' .. get_comment_box_default_style())
-      end,
-      desc = 'Remove a comment box in visual mode',
-      mode = { 'v' },
-    },
-    {
-      '<leader>cby',
-      function()
-        vim.cmd('CBy ' .. get_comment_box_default_style())
-      end,
-      desc = 'Yank the contents of a comment box',
-      mode = { 'n', 'v' },
+      desc = "Create RC Comment Line",
+      mode = { "n", "v" },
     },
 
     {
-      '<leader>cbC',
+      "<leader>cbd",
       function()
-        vim.cmd('CBcatalog ' .. get_comment_box_default_style())
+        vim.cmd("CBd " .. get_comment_box_default_style())
       end,
-      desc = 'Open the Comment Box catalogue',
+      desc = "Remove a comment box in visual mode",
+      mode = { "v" },
+    },
+    {
+      "<leader>cby",
+      function()
+        vim.cmd("CBy " .. get_comment_box_default_style())
+      end,
+      desc = "Yank the contents of a comment box",
+      mode = { "n", "v" },
     },
 
     {
-      '<leader>cbD',
+      "<leader>cbC",
       function()
-        local input = vim.fn.input 'Enter the name of the default style to use: '
+        vim.cmd("CBcatalog " .. get_comment_box_default_style())
+      end,
+      desc = "Open the Comment Box catalogue",
+    },
+
+    {
+      "<leader>cbD",
+      function()
+        local input = vim.fn.input("Enter the name of the default style to use: ")
         vim.g.comment_box_default_style = input
       end,
-      desc = 'Change the default comment box style',
+      desc = "Change the default comment box style",
     },
   },
 }

@@ -1,11 +1,9 @@
 return {
-  'j-hui/fidget.nvim',
-  version = false,
-  enabled = true,
+  "j-hui/fidget.nvim",
   opts = {
-    display = {
 
-      render_limit = 16,
+    display = {
+      done_ttl = 5,
     },
   },
 }
