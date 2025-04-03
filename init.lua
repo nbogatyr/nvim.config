@@ -6,6 +6,3 @@ local settings = require("config.settings")
 
 -- Setup the colorscheme
 vim.cmd.colorscheme(settings.default_colorscheme)
-
--- Load up my custom pickers
-require("config.pickers")
