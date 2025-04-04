@@ -52,6 +52,7 @@ return {
           follow = true,
         },
 
+
         grep = {
           follow = true,
         },
@@ -104,6 +105,7 @@ return {
         sources = {
           buffers = { layout = { preset = "custom_telescope_vert_layout" } },
           recent = { layout = { preset = "custom_telescope_vert_layout" }, title = "Most Recently Used Files" },
+          keymaps = { layout = {preset = "vscode"}}
         },
       },
 
