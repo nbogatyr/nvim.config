@@ -84,7 +84,9 @@ return {
         return actual_path
       end,
     }, function(item, idx)
+        if item ~= nil then
       MiniSessions.read(item)
+        end
     end)
   end,
 }
