@@ -3,7 +3,7 @@ return {
   opts = {
 
     display = {
-      done_ttl = 5,
+      done_ttl = 7,
     },
   },
 }
