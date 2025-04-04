@@ -48,7 +48,7 @@ g.markdown_recommended_style = 0
 -- │                         Options                         │
 -- ╰─────────────────────────────────────────────────────────╯
 -- Disable relative line numbers
-opt.relativenumber = false
+opt.relativenumber = true
 
 -- Tabs ought to be 4 spaces
 opt.tabstop = 4
