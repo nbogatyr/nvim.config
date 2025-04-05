@@ -1,8 +1,9 @@
 -- ╭─────────────────────────────────────────────────────────╮
--- │                 Various Extra Functions                 │
+-- │                 Various Extra Utilities                 │
 -- ╰─────────────────────────────────────────────────────────╯
+
 return {
-  -- Picker for getting sessions
+  -- Picker for getting sessions, CURRENTLY UNUSED
   -- Reference for this was https://github.com/LazyVim/LazyVim/pull/5443/files
   pick_sessions = function()
     local Snacks = require("snacks")
@@ -70,6 +71,7 @@ return {
     })
   end,
 
+  -- Custom function for selecting sessions that correctly displays the path
   select_sessions = function()
     local sessions = MiniSessions.detected
     local names = {}
@@ -89,4 +91,62 @@ return {
         end
     end)
   end,
+
+get_files_in_root = function()
+  -- Get the root directory (current working directory in Neovim)
+  local root_dir = vim.fn.getcwd()
+
+  -- Define the command to run. Prefer 'fd' if available, fallback to 'rg'.
+  local command
+  if vim.fn.executable("fd") == 1 then
+    command = string.format("fd --type f --hidden --exclude .git --color never . %s", root_dir)
+  elseif vim.fn.executable("rg") == 1 then
+    command = string.format("rg --files --hidden --glob '!**/.git/**' %s", root_dir)
+  else
+    vim.notify("Neither 'fd' nor 'rg' is available in your system.", vim.log.levels.ERROR)
+    return {}
+  end
+
+  -- Run the command and capture the output
+  local handle = io.popen(command)
+  if not handle then
+    vim.notify("Failed to execute the command.", vim.log.levels.ERROR)
+    return {}
+  end
+
+  -- Read the output line by line and store it in a table
+  local result = {}
+  for line in handle:lines() do
+    table.insert(result, line)
+  end
+
+  -- Close the handle
+  handle:close()
+
+  return result
+end,
+
+  -- Generic function for taking async function and getting input from it synchronously
+get_async_select = function(options, prompt)
+  local co = coroutine.running()
+  assert(co, "must be running under a coroutine")
+
+  vim.ui.select(options, {prompt = prompt}, function(str)
+    -- (2) the asynchronous callback called when user inputs something
+    coroutine.resume(co, str)
+  end)
+
+  -- (1) Suspends the execution of the current coroutine, context switching occurs
+  local input = coroutine.yield()
+
+  -- (3) return the function
+  return { input = input }
+end
+
+
+
+
+
 }
+
+
