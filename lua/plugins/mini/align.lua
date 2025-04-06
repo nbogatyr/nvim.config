@@ -6,7 +6,8 @@ return {
   version = false,
   opts = {
     mappings = {
-      start_with_preview = "gA",
+      start_with_preview = "<leader>cLA",
+      start = "<leader>cLa"
     },
   },
 }
