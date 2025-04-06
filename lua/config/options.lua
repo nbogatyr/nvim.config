@@ -13,7 +13,7 @@ g.mapleader = " "
 g.maplocalleader = "\\"
 
 -- LazyVim auto format
-g.autoformat = false
+g.autoformat = true
 
 -- LazyVim completion engine to use.
 -- Can be one of: nvim-cmp, blink.cmp, 'auto'
@@ -43,6 +43,9 @@ g.trouble_lualine = true
 
 -- Fix markdown indentation settings
 g.markdown_recommended_style = 0
+
+-- Python install
+vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- ╭─────────────────────────────────────────────────────────╮
 -- │                         Options                         │
