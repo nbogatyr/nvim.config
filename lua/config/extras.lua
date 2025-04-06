@@ -141,9 +141,37 @@ get_async_select = function(options, prompt)
 
   -- (3) return the function
   return { input = input }
+end,
+
+
+  -- Generic function to start a job to execute some shell command and put the outputs into vim.notify
+execute_shell_command = function(command)
+  -- Notify the user that the command is being executed
+  vim.notify("Executing command: " .. command, vim.log.levels.INFO)
+
+  -- Run the command asynchronously
+  vim.fn.jobstart(command, {
+    stdout_buffered = true,
+    stderr_buffered = true,
+    on_stdout = function(_, data)
+      if data and data[1] ~= "" then
+        vim.notify("Command output:\n" .. table.concat(data, "\n"), vim.log.levels.INFO)
+      end
+    end,
+    on_stderr = function(_, data)
+      if data and data[1] ~= "" then
+        vim.notify("Command error:\n" .. table.concat(data, "\n"), vim.log.levels.WARN)
+      end
+    end,
+    on_exit = function(_, exit_code)
+      if exit_code == 0 then
+        vim.notify("Command executed successfully.", vim.log.levels.INFO)
+      else
+        vim.notify("Command failed with exit code: " .. exit_code, vim.log.levels.WARN)
+      end
+    end,
+  })
 end
-
-
 
 
 
