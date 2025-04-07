@@ -2,6 +2,7 @@ return {
   "sainnhe/gruvbox-material",
   lazy = false,
   priority = 1000,
+
   config = function()
     -- Add some highlights here
 
@@ -76,6 +77,79 @@ return {
         set_hl("NoiceCmdlineIcon", palette.orange, palette.bg0)
         set_hl("NoiceCmdlinePopupTitle", palette.orange, palette.bg0)
         set_hl("NoiceCmdlinePopupBorder", palette.orange, palette.bg0)
+
+        -- set_hl("RenderMarkdownH1Bg", palette.none, palette.markbg1)
+        -- set_hl("RenderMarkdownH2Bg", palette.none, palette.markbg2)
+        -- set_hl("RenderMarkdownH3Bg", palette.none, palette.markbg3)
+        -- set_hl("RenderMarkdownH4Bg", palette.none, palette.markbg4)
+        -- set_hl("RenderMarkdownH5Bg", palette.none, palette.markbg5)
+        -- set_hl("RenderMarkdownH6Bg", palette.none, palette.markbg6)
+        --
+        -- Set the lualine theme as well
+        -- local success, lualine = pcall(require("plugins.lualine"))
+        -- local lualine = require("plugins.lualine")
+        -- lualine.opts.options.theme = require("plugins.lualine.themes.gruvbox-material")
+        --
+
+        -- Highlights for bufferline
+
+        -- set_hl("BufferLineFill", palette.bg0, palette.bg0)
+        -- set_hl("BufferLineSeparator", buffer_background, palette.bg0)
+        -- set_hl("BufferLineBackground", palette.fg0, buffer_background)
+        --
+        -- set_hl("BufferLineOffsetSeparator", palette.bg0, palette.bg0)
+        --
+        -- set_hl("BufferLineSeparatorSelected", buffer_background, palette.bg0)
+        -- set_hl("BufferLineBufferSelected", palette.fg1, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineIndicatorSelected", palette.fg1, buffer_background)
+        -- set_hl("BufferLineMiniIconsAzureSelected", palette.blue, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineModifiedSelected", palette.green, buffer_background)
+        -- set_hl("BufferLineNumbersSelected", palette.fg1, buffer_background, "underline", palette.fg0)
+        --
+        -- set_hl("BufferLineHintSelected", palette.green, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineInfoSelected", palette.blue, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLinePickSelected", palette.red, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineErrorSelected", palette.red, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineWarningSelected", palette.yellow, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineDiagnosticSelected", palette.grey0, buffer_background, "underline", palette.fg0)
+        --
+        -- set_hl("BufferLineHintDiagnosticSelected", palette.green, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineInfoDiagnosticSelected", palette.blue, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineErrorDiagnosticSelected", palette.red, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineWarningDiagnosticSelected", palette.yellow, buffer_background, "underline", palette.fg0)
+        --
+        -- set_hl("BufferLineDuplicateSelected", palette.fg1, buffer_background, "underline", palette.fg0)
+        -- set_hl("BufferLineDuplicate", palette.fg0, buffer_background)
+        --
+        -- -- Visible buffers
+        -- set_hl("BufferLineDuplicateVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineHintVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineInfoVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineErrorVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineBufferVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineNumbersVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineWarningVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineModifiedVisible", palette.green, buffer_background)
+        -- set_hl("BufferLineIndicatorVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineSeparatorVisible", palette.bg_dim, palette.bg0)
+        --
+        -- set_hl("BufferLineDiagnosticVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineCloseButtonVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineHintDiagnosticVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineInfoDiagnosticVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineErrorDiagnosticVisible", other_buffer_text, buffer_background)
+        -- set_hl("BufferLineWarningDiagnosticVisible", other_buffer_text, buffer_background)
+
+        --
+        -- -- Bufferline tabs
+        -- set_hl("BufferLineTab", palette.fg0, buffer_background)
+        -- set_hl("BufferLineTabClose", palette.fg0, buffer_background)
+        -- set_hl("BufferLineTabSeparator", buffer_background, palette.bg0)
+        -- set_hl("BufferLineTabPageFill", buffer_background, palette.bg_dim)
+        -- set_hl("BufferLineTabpages", buffer_background, palette.bg_dim)
+        --
+        -- set_hl("BufferLineTabSelected", palette.fg1, palette.bg_dim, "underline", palette.fg0)
+        -- set_hl("BufferLineTabSeparatorSelected", palette.bg_dim, palette.bg0)
       end,
     })
   end,
