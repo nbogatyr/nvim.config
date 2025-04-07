@@ -14,6 +14,8 @@ return {
         fps = 100,
       },
 
+      explorer = {},
+
       -- ─( snacks.dshboard )────────────────────────────────────────────────
       dashboard = {
         enabled = true,
@@ -46,12 +48,11 @@ return {
 
       -- ─( snacks.picker )──────────────────────────────────────────────────
       picker = {
-        layout = "custom_telescope_default_layout",
+        layout = "custom_telescope_vert_layout",
 
         files = {
           follow = true,
         },
-
 
         grep = {
           follow = true,
@@ -96,7 +97,7 @@ return {
                 title = "Find {title} {live} {flags}",
                 title_pos = "center",
               },
-              { win = "list", border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }, height = 8 },
+              { win = "list", border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }, height = 15 },
               { win = "preview", border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" } },
             },
           },
@@ -105,7 +106,7 @@ return {
         sources = {
           buffers = { layout = { preset = "custom_telescope_vert_layout" } },
           recent = { layout = { preset = "custom_telescope_vert_layout" }, title = "Most Recently Used Files" },
-          keymaps = { layout = {preset = "vscode"}}
+          keymaps = { layout = { preset = "vscode" } },
         },
       },
 
