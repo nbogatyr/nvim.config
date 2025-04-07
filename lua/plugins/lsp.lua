@@ -23,7 +23,11 @@ return {
         virtual_lines = {
           current_line = true,
           format = function(diag)
-            return diag.message .. ' (' .. diag.source .. ')'
+            if diag.source ~= nil then
+              return diag.message .. " (" .. diag.source .. ")"
+            else
+              return diag.message
+            end
           end,
         },
 
@@ -105,11 +109,13 @@ return {
         -- Configure the python LSPs
         ruff = {
           cmd_env = { RUFF_TRACE = "messages" },
+          -- For configuring this, see: https://docs.astral.sh/ruff/editors/settings/
+          -- As it is configured now, it ought to use editor settings, then override with project settings from pyproject.toml or ruff.toml
           init_options = {
             settings = {
-            ruff = {
-              logLevel = "warning",
-          }
+              fixAll = true,
+              logLevel = "info",
+              organizeImports = true,
             },
           },
           keys = {
@@ -121,21 +127,30 @@ return {
           },
         },
 
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              disableOrganizeImports = true,
-            },
-          },
-          keys = {
-            -- TODO: Improve this so it works with more than just uv - if I ever switch
-            {"<leader>cpb",function() require('config.extras').execute_shell_command('uvx basedpyright --writebaseline') end, desc = "Write (based)Pyright Baseline File"},
-            {"<leader>cpB", function() require('config.extras').execute_shell_command('rm .basedpyright/baseline.json') end, desc = "Delete (based)Pyright File"},
-
-          }
-
-        }
-
+        -- basedpyright = {
+        --   settings = {
+        --     basedpyright = {
+        --       disableOrganizeImports = true,
+        --     },
+        --   },
+        --   keys = {
+        --     -- TODO: Improve this so it works with more than just uv - if I ever switch
+        --     {
+        --       "<leader>cpb",
+        --       function()
+        --         require("config.extras").execute_shell_command("uvx basedpyright --writebaseline")
+        --       end,
+        --       desc = "Write (based)Pyright Baseline File",
+        --     },
+        --     {
+        --       "<leader>cpB",
+        --       function()
+        --         require("config.extras").execute_shell_command("rm .basedpyright/baseline.json")
+        --       end,
+        --       desc = "Delete (based)Pyright File",
+        --     },
+        --   },
+        -- },
       },
 
       setup = {
@@ -151,9 +166,9 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
- opts = function()
-    local keys = require("lazyvim.plugins.lsp.keymaps").get()
-    keys[#keys + 1] = { "<leader>cX", "<cmd>LspRestart<cr>", desc = "Restart LSPs" }
-  end,
-  }
+    opts = function()
+      local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      keys[#keys + 1] = { "<leader>cX", "<cmd>LspRestart<cr>", desc = "Restart LSPs" }
+    end,
+  },
 }
