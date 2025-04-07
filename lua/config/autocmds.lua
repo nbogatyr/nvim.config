@@ -77,3 +77,11 @@ vim.api.nvim_create_autocmd("FileType", {
     end)
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    vim.schedule(function()
+      vim.opt.showtabline = 2
+    end)
+  end,
+})
