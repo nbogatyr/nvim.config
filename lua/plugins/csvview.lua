@@ -1,4 +1,3 @@
-
 return {
   "hat0uma/csvview.nvim",
   ---@module "csvview"
@@ -20,10 +19,4 @@ return {
     },
   },
   cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
-
-  keys = {
-    { "<leader>cze", "<cmd>CsvViewEnable<cr>", desc = "Enable CSV View" },
-    { "<leader>czd", "<cmd>CsvViewDisable<cr>", desc = "Disable CSV View" },
-    { "<leader>czt", "<cmd>CsvViewToggle<cr>", desc = "Toggle CSV View" },
-  }
 }
