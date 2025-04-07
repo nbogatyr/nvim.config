@@ -74,9 +74,9 @@ return {
         set_hl("SnacksScratchKey", palette.bg0, palette.orange)
         set_hl("SnacksScratchDesc", palette.bg0, palette.orange)
 
-        set_hl("NoiceCmdlineIcon", palette.orange, palette.bg0)
-        set_hl("NoiceCmdlinePopupTitle", palette.orange, palette.bg0)
-        set_hl("NoiceCmdlinePopupBorder", palette.orange, palette.bg0)
+        set_hl("NoiceCmdlineIcon", palette.fg1, palette.bg0)
+        set_hl("NoiceCmdlinePopupTitle", palette.fg1, palette.bg0)
+        set_hl("NoiceCmdlinePopupBorder", palette.grey1, palette.bg0)
 
         -- set_hl("RenderMarkdownH1Bg", palette.none, palette.markbg1)
         -- set_hl("RenderMarkdownH2Bg", palette.none, palette.markbg2)
