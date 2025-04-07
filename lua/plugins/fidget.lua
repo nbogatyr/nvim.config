@@ -5,5 +5,9 @@ return {
     display = {
       done_ttl = 7,
     },
+
+    notification = {
+      override_vim_notify = true
+    }
   },
 }
