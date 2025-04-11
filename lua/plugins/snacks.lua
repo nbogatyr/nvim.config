@@ -106,7 +106,7 @@ return {
         sources = {
           buffers = { layout = { preset = "custom_telescope_vert_layout" } },
           recent = { layout = { preset = "custom_telescope_vert_layout" }, title = "Most Recently Used Files" },
-          keymaps = { layout = { preset = "vscode" } },
+          keymaps = { layout = { preset = "vscode", layout = { width = 0.8 } } },
         },
       },
 

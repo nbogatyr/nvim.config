@@ -2,7 +2,7 @@ return {
   "which-key.nvim",
 
   opts = {
-    preset = "helix",
+    preset = "classic",
     width = { min = 5 },
 
     win = {
