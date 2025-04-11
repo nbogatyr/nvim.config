@@ -53,26 +53,27 @@ return {
 
         -- Snacks highlights
         -- Picker
-        set_hl("SnacksPickerBoxTitle", palette.bg0, palette.orange, "bold")
-        set_hl("SnacksPickerInput", palette.fg1, palette.bg0)
-        set_hl("SnacksPickerInputBorder", palette.bg0, palette.bg0)
-        set_hl("SnacksPickerInputTitle", palette.bg0, palette.orange, "bold")
-
-        set_hl("SnacksPickerList", palette.fg0, palette.bg1)
+        -- set_hl("SnacksPickerBoxTitle", palette.bg0, palette.orange, "bold")
+        -- set_hl("SnacksPickerInput", palette.fg1, palette.bg0)
+        -- set_hl("SnacksPickerList", palette.none, palette.bg0)
+        set_hl("SnacksPickerInputBorder", palette.bg3, palette.bg0)
+        -- set_hl("SnacksPickerInputTitle", palette.fg1, palette.bg0, "bold")
+        --
+        -- set_hl("SnacksPickerList", palette.fg0, palette.bg1)
         set_hl("SnacksPickerListBorder", palette.bg3, palette.bg0)
-        set_hl("SnacksPickerListCursorLine", palette.fg1, palette.bg_visual_yellow)
-
+        -- set_hl("SnacksPickerListCursorLine", palette.fg1, palette.bg_visual_yellow)
+        --
         set_hl("SnacksPickerPreviewBorder", palette.bg3, palette.bg0)
-
-        set_hl("SnacksPickerBorder", palette.bg0, palette.bg0)
-        set_hl("SnacksPreviewTitle", palette.bg0, palette.orange, "bold")
-
-        set_hl("FloatBorder", palette.bg3, palette.bg1)
-        set_hl("NormalFloat", palette.fg1, palette.bg1)
-        set_hl("FloatTitle", palette.bg0, palette.orange, "bold")
-
-        set_hl("SnacksScratchKey", palette.bg0, palette.orange)
-        set_hl("SnacksScratchDesc", palette.bg0, palette.orange)
+        --
+        -- set_hl("SnacksPickerBorder", palette.bg0, palette.bg0)
+        -- set_hl("SnacksPreviewTitle", palette.bg0, palette.orange, "bold")
+        --
+        set_hl("FloatBorder", palette.bg3, palette.bg0)
+        set_hl("NormalFloat", palette.fg1, palette.bg0)
+        set_hl("FloatTitle", palette.none, palette.bg0, "bold")
+        --
+        -- set_hl("SnacksScratchKey", palette.bg0, palette.orange)
+        -- set_hl("SnacksScratchDesc", palette.bg0, palette.orange)
 
         set_hl("NoiceCmdlineIcon", palette.fg1, palette.bg0)
         set_hl("NoiceCmdlinePopupTitle", palette.fg1, palette.bg0)
