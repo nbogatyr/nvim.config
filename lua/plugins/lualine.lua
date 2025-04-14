@@ -17,9 +17,21 @@ return {
       opts.options.component_separators = ""
 
       opts.options.disabled_filetypes = {
-        tabline = { "dashboard", "alpha", "snacks_dashboard" },
-        statusline = { "dashboard", "alpha", "snacks_dashboard" },
-        winbar = { "dashboard", "alpha", "snacks_dashboard" },
+        statusline = { "dashboard", "alpha", "snacks_dashboard", "snacks_picker_preview" },
+        winbar = {
+          "dashboard",
+          "alpha",
+          "snacks_dashboard",
+          "snacks_picker_preview",
+          "help",
+          "snacks_picker",
+          "trouble",
+          "neotest_summary",
+          "snacks_picker_list",
+          "snacks_picker_input",
+          "snacks_layout_box",
+          "snacks_terminal",
+        },
       }
 
       local icons = LazyVim.config.icons
@@ -118,7 +130,7 @@ return {
 
       opts.options.always_show_tabline = false
 
-      opts.tabline = {
+      local tabline = {
         lualine_a = {
 
           -- {
@@ -138,8 +150,6 @@ return {
           { "filename" },
         },
         lualine_b = {
-
-          { "navic", color_correction = "dynamic" },
           -- {
           --   "buffers",
           --   show_modified_status = true,
@@ -147,11 +157,14 @@ return {
           --   component_separators = { left = "", right = "" },
           -- },
         },
+        -- { "navic", color_correction = "dynamic" }
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = { { "tabs" } },
+        lualine_z = { { "tabs", mode = 0 } },
       }
+      opts.winbar = tabline
+      opts.inactive_winbar = tabline
     end,
   },
 }

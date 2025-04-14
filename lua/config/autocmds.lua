@@ -78,10 +78,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function()
-    vim.schedule(function()
-      vim.opt.showtabline = 2
-    end)
-  end,
-})
+-- Force tabline to always show no matter what
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function()
+--     vim.schedule(function()
+--       vim.opt.showtabline = 2
+--     end)
+--   end,
+-- })

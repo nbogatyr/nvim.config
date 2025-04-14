@@ -52,7 +52,7 @@ if configuration.statusline_style == "default" then
       c = { bg = palette.bg0[1], fg = palette.fg1[1] },
     },
     inactive = {
-      a = { bg = palette.bg_statusline1[1], fg = palette.grey2[1] },
+      a = { bg = palette.grey2[1], fg = palette.bg0[1], gui = "bold" },
       b = { bg = palette.bg_statusline1[1], fg = palette.grey2[1] },
       c = { bg = palette.bg_statusline1[1], fg = palette.grey2[1] },
     },
