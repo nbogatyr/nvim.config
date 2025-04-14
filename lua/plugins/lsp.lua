@@ -127,30 +127,30 @@ return {
           },
         },
 
-        -- basedpyright = {
-        --   settings = {
-        --     basedpyright = {
-        --       disableOrganizeImports = true,
-        --     },
-        --   },
-        --   keys = {
-        --     -- TODO: Improve this so it works with more than just uv - if I ever switch
-        --     {
-        --       "<leader>cpb",
-        --       function()
-        --         require("config.extras").execute_shell_command("uvx basedpyright --writebaseline")
-        --       end,
-        --       desc = "Write (based)Pyright Baseline File",
-        --     },
-        --     {
-        --       "<leader>cpB",
-        --       function()
-        --         require("config.extras").execute_shell_command("rm .basedpyright/baseline.json")
-        --       end,
-        --       desc = "Delete (based)Pyright File",
-        --     },
-        --   },
-        -- },
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              disableOrganizeImports = true,
+            },
+          },
+          keys = {
+            -- TODO: Improve this so it works with more than just uv - if I ever switch
+            {
+              "<leader>cpb",
+              function()
+                require("config.extras").execute_shell_command("uvx basedpyright --writebaseline")
+              end,
+              desc = "Write (based)Pyright Baseline File",
+            },
+            {
+              "<leader>cpB",
+              function()
+                require("config.extras").execute_shell_command("rm .basedpyright/baseline.json")
+              end,
+              desc = "Delete (based)Pyright File",
+            },
+          },
+        },
       },
 
       setup = {
