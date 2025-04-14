@@ -1,7 +1,9 @@
 return {
   "echasnovski/mini.snippets",
-  event = "InsertEnter", -- don't depend on other plugins to load...
+  enabled = false,
+  event = "InsertEnter",
   dependencies = "rafamadriz/friendly-snippets",
+
   opts = function()
     ---@diagnostic disable-next-line: duplicate-set-field
     LazyVim.cmp.actions.snippet_stop = function() end -- by design, <esc> should not stop the session!
@@ -11,13 +13,12 @@ return {
     end
 
     local mini_snippets = require("mini.snippets")
-    return {
-      snippets = { mini_snippets.gen_loader.from_lang() },
+    local my_opts = {
+      snippets = {
+        mini_snippets.gen_loader.from_lang(),
+      },
 
-      -- Following the behavior of vim.snippets,
-      -- the intended usage of <esc> is to be able to temporarily exit into normal mode for quick edits.
-      --
-      -- If you'd rather stop the snippet on <esc>, activate the line below in your own config:
+      -- Uncomment this to enable quitting snippet with esc
       -- mappings = { stop = "<esc>" }, -- <c-c> by default, see :h MiniSnippets-session
       mappings = {
         expand = "<M-e>",
@@ -25,5 +26,7 @@ return {
         jump_prev = "<M-w>",
       },
     }
+
+    return my_opts
   end,
 }
