@@ -61,7 +61,8 @@ return {
         --
         -- set_hl("SnacksPickerList", palette.fg0, palette.bg1)
         set_hl("SnacksPickerListBorder", palette.bg3, palette.bg0)
-        -- set_hl("SnacksPickerListCursorLine", palette.fg1, palette.bg_visual_yellow)
+        set_hl("SnacksPickerListCursorLine", palette.fg1, palette.bg_current_word, "bold")
+
         --
         set_hl("SnacksPickerPreviewBorder", palette.bg3, palette.bg0)
         --
