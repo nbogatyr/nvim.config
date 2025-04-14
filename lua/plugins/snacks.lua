@@ -48,7 +48,7 @@ return {
 
       -- ─( snacks.picker )──────────────────────────────────────────────────
       picker = {
-        layout = "custom_telescope_vert_layout",
+        layout = "custom_telescope_default_layout",
 
         files = {
           follow = true,
@@ -64,7 +64,7 @@ return {
               box = "vertical",
               width = 0.8,
               height = 0.8,
-              border = "none",
+              border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
               {
                 win = "input",
                 height = 1,
@@ -81,6 +81,43 @@ return {
                   width = 0.6,
                 },
               },
+            },
+          },
+          custom_sidebar = {
+            preview = "main",
+            layout = {
+              backdrop = true,
+              width = 40,
+              min_width = 40,
+              height = 0,
+              position = "left",
+              border = "none",
+              box = "vertical",
+              {
+                win = "input",
+                height = 1,
+                border = { " ", " ", " ", " ", "▁", "▁", "▁", " " },
+                title = "{title} {live} {flags}",
+                title_pos = "center",
+              },
+              { win = "list", border = "none" },
+              { win = "preview", title = "{preview}", height = 0.4, border = "top" },
+            },
+          },
+
+          vscode_custom = {
+            preview = false,
+            layout = {
+              backdrop = false,
+              row = 1,
+              width = 0.8,
+              min_width = 80,
+              height = 0.4,
+              border = "rounded",
+              box = "vertical",
+              { win = "input", height = 1, border = "rounded", title = "{title} {live} {flags}", title_pos = "center" },
+              { win = "list", border = "hpad" },
+              { win = "preview", title = "{preview}", border = "rounded" },
             },
           },
 
@@ -106,7 +143,8 @@ return {
         sources = {
           buffers = { layout = { preset = "custom_telescope_vert_layout" } },
           recent = { layout = { preset = "custom_telescope_vert_layout" }, title = "Most Recently Used Files" },
-          keymaps = { layout = { preset = "vscode", layout = { width = 0.8 } } },
+          keymaps = { layout = { preset = "vscode_custom" } },
+          explorer = { layout = { preset = "custom_sidebar" } },
         },
       },
 
@@ -142,6 +180,53 @@ return {
 
     keys = {
       {
+        "<leader>fp",
+        function()
+          Snacks.picker.projects({
+            confirm = function(picker, item)
+              picker:close()
+              if not item then
+                return
+              end
+              local dir = item.file
+              local session_loaded = false
+              vim.api.nvim_create_autocmd("SessionLoadPost", {
+                once = true,
+                callback = function()
+                  session_loaded = true
+                end,
+              })
+              vim.defer_fn(function()
+                if not session_loaded then
+                  Snacks.picker.files()
+                end
+              end, 100)
+
+              local detected_sessions = MiniSessions.detected
+              local matching_session = nil
+              for k, v in pairs(detected_sessions) do
+                local new_string = string.gsub(v.name, "%%", "/")
+                -- Split the string based on space
+                if new_string == dir then
+                  matching_session = v.name
+                  break
+                end
+              end
+
+              if matching_session ~= nil then
+                MiniSessions.read(matching_session, { verbose = true })
+              else
+                vim.notify("No session found for " .. dir, vim.log.levels.WARN)
+                vim.notify("Creating new session.")
+                local new_session_file_name = string.gsub(dir, "/", "%%")
+                MiniSessions.write(new_session_file_name)
+                vim.fn.chdir(dir)
+              end
+            end,
+          })
+        end,
+      },
+      {
         "<leader>ff",
         function()
           Snacks.picker.files({ follow = true })
@@ -169,6 +254,90 @@ return {
         end,
         desc = "Visual selection or word",
         mode = { "n", "x" },
+      },
+      { "<leader>ft", nil },
+      { "<leader>fT", nil },
+      {
+        "<leader>Tl",
+        function()
+          Snacks.terminal(nil, { win = { position = "right", enter = true } })
+        end,
+        desc = "Terminal (cwd) - Right",
+        mode = "n",
+      },
+      {
+        "<leader>Tk",
+        function()
+          Snacks.terminal(nil, { win = { position = "top", enter = true } })
+        end,
+        desc = "Terminal (cwd) - Above",
+        mode = "n",
+      },
+      {
+        "<leader>Tj",
+        function()
+          Snacks.terminal(nil, { win = { position = "bottom", enter = true, height = 0.25 } })
+        end,
+        desc = "Terminal (cwd) - Bottom",
+        mode = "n",
+      },
+      {
+        "<leader>Th",
+        function()
+          Snacks.terminal(nil, { win = { position = "left", enter = true } })
+        end,
+        desc = "Terminal (cwd) - Left",
+        mode = "n",
+      },
+
+      {
+        "<leader>TL",
+        function()
+          Snacks.terminal(nil, { win = { osition = "right", enter = true, cwd = LazyVim.root() } })
+        end,
+        desc = "Terminal (Root Dir) - Right",
+        mode = "n",
+      },
+      {
+        "<leader>TK",
+        function()
+          Snacks.terminal(nil, { win = { osition = "top", enter = true, cwd = LazyVim.root() } })
+        end,
+        desc = "Terminal (Root Dir) - Top",
+        mode = "n",
+      },
+      {
+        "<leader>TJ",
+        function()
+          Snacks.terminal(nil, { win = { position = "bottom", height = 0.25, enter = true, cwd = LazyVim.root() } })
+        end,
+        desc = "Terminal (Root Dir) - Bottom",
+        mode = "n",
+      },
+      {
+
+        "<leader>TH",
+        function()
+          Snacks.terminal(nil, { win = { position = "left", enter = true, cwd = LazyVim.root() } })
+        end,
+        desc = "Terminal (Root Dir) - Left",
+        mode = "n",
+      },
+      {
+        "<leader>Tf",
+        function()
+          Snacks.terminal(nil, { win = { position = "float", enter = true, border = "rounded" } })
+        end,
+        desc = "Terminal Floating",
+        mode = "n",
+      },
+      {
+        "<leader>Tt",
+        function()
+          Snacks.terminal.toggle()
+        end,
+        desc = "Toggle Terminal",
+        mode = "n",
       },
     },
   },
