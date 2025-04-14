@@ -12,4 +12,3 @@ This is a customized LazyVim install
 - [fdfind](https://github.com/sharkdp/fd?tab=readme-ov-file#installation)
 - A [Nerd Font](https://www.nerdfonts.com/)
 - [lzaygit](https://github.com/jesseduffield/lazygit)
-
