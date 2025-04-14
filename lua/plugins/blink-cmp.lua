@@ -4,12 +4,27 @@ return {
 
     -- Always use rust implementation
     fuzzy = { implementation = "rust" },
+
+    snippets = {
+      preset = "luasnip",
+    },
+
     completion = {
       menu = {
         border = nil,
 
         draw = {
-          columns = { { "kind_icon", "label", gap = 1 }, { "source_name", "label_description", gap = 1 } },
+          columns = {
+            { "label", gap = 1 },
+            { "kind_icon", "kind", gap = 1 },
+          },
+          gap = 1,
+        },
+      },
+
+      documentation = {
+        window = {
+          border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
         },
       },
     },
