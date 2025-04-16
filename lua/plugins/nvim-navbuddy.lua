@@ -1,5 +1,8 @@
 return {
   "SmiteshP/nvim-navbuddy",
+
+  lazy = true,
+
   init = function()
     LazyVim.lsp.on_attach(function(client, buffer)
       if client.supports_method("textDocument/documentSymbol") then
