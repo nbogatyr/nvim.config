@@ -1,6 +1,7 @@
 return {
   "benlubas/molten-nvim",
-  enabled = false,
+  enabled = true,
+  ft = { "quarto" },
   version = "^1.0.0",
   build = ":UpdateRemotePlugins",
   init = function()
@@ -12,27 +13,17 @@ return {
     vim.g.molten_virt_lines_off_by_1 = true
 
     vim.g.molten_output_show_exec_time = true
-    vim.g.molten_tick_rate = 150
+    vim.g.molten_tick_rate = 200
   end,
 
   keys = {
-    { "n", "<leader>Me", ":MoltenEvaluateOperator<CR>", desc = "evaluate operator", silent = true },
-    {
-      "n",
-      "<leader>Mo",
-      ":noautocmd MoltenEnterOutput<CR>",
-      desc = "open output window",
-      silent = true,
-    },
-    { "n", "<leader>Mr", ":MoltenReevaluateCell<CR>", desc = "re-eval cell", silent = true },
-    {
-      "v",
-      "<leader>Me",
-      ":<C-u>MoltenEvaluateVisual<CR>gv",
-      desc = "execute visual selection",
-      silent = true,
-    },
-    { "n", "<leader>Mh", ":MoltenHideOutput<CR>", desc = "close output window", silent = true },
-    { "n", "<leader>Md", ":MoltenDelete<CR>", desc = "delete Molten cell", silent = true },
+    { "<leader>pm", desc = "Molten" },
+    { "<leader>pmi", "<cmd>MoltenInit<cr>", desc = "Init Molten", mode = "n" },
+    { "<leader>pme", "<cmd>MoltenEvaluateOperator<CR>", desc = "Evaluate Operator", silent = true, mode = "n" },
+    { "<leader>pmr", "<cmd>MoltenReevaluateCell<CR>", desc = "Re-Eval Cell", silent = true, mode = "n" },
+    { "<leader>pmo", "<cmd>MoltenEnterOutput<CR>", desc = "Open Output Window", silent = true, mode = "n" },
+    { "<leader>pme", "<cmd>MoltenEvaluateVisual<CR>gv", desc = "Execute Visual Selection", silent = true, mode = "v" },
+    { "<leader>pmh", "<cmd>MoltenHideOutput<CR>", desc = "Close Output Window", silent = true, mode = "n" },
+    { "<leader>pmd", "<cmd>MoltenDelete<CR>", desc = "Delete Molten cell", silent = true, mode = "n" },
   },
 }
