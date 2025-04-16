@@ -46,6 +46,7 @@ return {
   },
 
   keys = {
+    { "<leader>O", desc = "+Obsidian" },
     { "<leader>OT", "<cmd>ObsidianToday<cr>", desc = "Create a new note for today" },
     { "<leader>Ol", "<cmd>ObsidianLinks<cr>", desc = "Search links" },
     { "<leader>On", "<cmd>ObsidianNew<cr>", desc = "New note" },

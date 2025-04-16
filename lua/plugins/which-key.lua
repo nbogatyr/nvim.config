@@ -4,6 +4,9 @@ return {
   opts = {
     preset = "classic",
     width = { min = 5 },
+    delay = function(ctx)
+      return ctx.plugin and 0 or 50
+    end,
 
     win = {
       border = "rounded",
@@ -12,9 +15,8 @@ return {
     },
 
     spec = {
-      { "<leader>cb", group = "Comment Box" },
-      { "<leader>O", group = "Obsidian" },
-      { "<leader>cS", group = "Surround" },
+      { "<leader>P", icon = " ", group = "Python" },
+      { "<leader>cT", group = "Treesitter" },
     },
   },
 }

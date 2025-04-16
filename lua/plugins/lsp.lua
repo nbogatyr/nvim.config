@@ -136,14 +136,14 @@ return {
           keys = {
             -- TODO: Improve this so it works with more than just uv - if I ever switch
             {
-              "<leader>cpb",
+              "<leader>Pb",
               function()
                 require("config.extras").execute_shell_command("uvx basedpyright --writebaseline")
               end,
               desc = "Write (based)Pyright Baseline File",
             },
             {
-              "<leader>cpB",
+              "<leader>PB",
               function()
                 require("config.extras").execute_shell_command("rm .basedpyright/baseline.json")
               end,
