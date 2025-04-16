@@ -5,7 +5,7 @@ end
 return {
   "LudoPinelli/comment-box.nvim",
   version = false,
-  lazy = false,
+  lazy = true,
 
   init = function()
     vim.g.comment_box_default_style = 0
@@ -24,6 +24,7 @@ return {
   },
 
   keys = {
+    { "<leader>cb", desc = "Comment Box" },
     {
       "<leader>cbccb",
       function()

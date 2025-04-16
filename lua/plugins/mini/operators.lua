@@ -19,4 +19,8 @@ return {
     },
   },
   version = false,
+  keys = {
+    { "gX", desc = "Exchange Line" },
+    { "gR", desc = "Replace Line" },
+  },
 }

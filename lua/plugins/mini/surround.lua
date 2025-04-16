@@ -1,16 +1,18 @@
+local surround_prefix = "<leader>cx"
+
 return {
   "echasnovski/mini.surround",
   version = false,
 
   opts = {
     mappings = {
-      add = "<leader>cxa",
-      delete = "<leader>cxd",
-      find = "<leader>cxf",
-      find_left = "<leader>cxF",
-      highlight = "<leader>cxh",
-      replace = "<leader>cxr",
-      update_n_lines = "<leader>cxn",
+      add = surround_prefix .. "a",
+      delete = surround_prefix .. "d",
+      find = surround_prefix .. "f",
+      find_left = surround_prefix .. "F",
+      highlight = surround_prefix .. "h",
+      replace = surround_prefix .. "r",
+      update_n_lines = surround_prefix .. "n",
 
       suffix_last = "N",
       suffix_next = "n",
@@ -18,12 +20,13 @@ return {
   },
 
   keys = {
-    { "<leader>cxa", "<leader>cxa" },
-    { "<leader>cxd", "<leader>cxd" },
-    { "<leader>cxf", "<leader>cxf" },
-    { "<leader>cxF", "<leader>cxF" },
-    { "<leader>cxh", "<leader>cxh" },
-    { "<leader>cxr", "<leader>cxr" },
-    { "<leader>cxn", "<leader>cxn" },
+    { surround_prefix, desc = "Mini Surround" },
+    { surround_prefix .. "a", desc = "Add surround char" },
+    { surround_prefix .. "d", desc = "Delete surround char" },
+    { surround_prefix .. "f", desc = "Find surround char" },
+    { surround_prefix .. "F", desc = "Find left surround char" },
+    { surround_prefix .. "h", desc = "Highlight surround char" },
+    { surround_prefix .. "r", desc = "Replace surround char" },
+    { surround_prefix .. "n", desc = "Update n lines" },
   },
 }

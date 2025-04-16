@@ -3,7 +3,9 @@ return {
   enabled = true,
 
   -- Plugin can't be lazy, needs to load right away to grab the sessions
-  lazy = false,
+  lazy = true,
+
+  event = "VeryLazy",
 
   opts = {
     autoread = false,
