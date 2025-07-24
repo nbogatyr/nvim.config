@@ -8,6 +8,9 @@ return {
       local presets = require("markview.presets")
 
       return {
+        experimental = {
+          check_rtp = false,
+        },
         preview = {
           enable = true,
           enable_hybrid_mode = true,

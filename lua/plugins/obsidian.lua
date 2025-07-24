@@ -35,34 +35,11 @@ return {
     -- templates = {
     --   folder = "templates",
     -- },
-
     daily_notes = {
       folder = "dailies",
       default_tags = { "daily-notes" },
     },
 
-    mappings = {
-      ["<leader>Ot"] = {
-        action = function()
-          return require("obsidian").util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      ["gf"] = {
-        action = function()
-          return require("obsidian").util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-    },
-
-    follow_url_func = function(url)
-      vim.fn.jobstart({ "wslview", url })
-    end,
-
-    ui = {
-      enable = true,
-    },
   },
 
   keys = {
