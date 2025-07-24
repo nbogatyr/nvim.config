@@ -2,15 +2,6 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
 
-    init = function()
-      local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
-
-      -- Repeat movement with ; and ,
-      -- ensure ; goes forward and , goes backward regardless of the last direction
-      vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
-      vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
-    end,
-
     opts = {
       textobjects = {
 
@@ -104,4 +95,16 @@ return {
       },
     },
   },
+  {
+    "nvim-treesitter",
+    opts = function(_, opts)
+      local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
+
+      -- Repeat movement with ; and ,
+      -- ensure ; goes forward and , goes backward regardless of the last direction
+      vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+      vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+    end,
+  },
+  { "nvim-treesitter-textobjects", event = "VeryLazy" },
 }

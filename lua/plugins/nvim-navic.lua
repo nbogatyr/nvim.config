@@ -1,5 +1,6 @@
 return {
   "SmiteshP/nvim-navic",
+  enabled = false,
   lazy = true,
   init = function()
     LazyVim.lsp.on_attach(function(client, buffer)

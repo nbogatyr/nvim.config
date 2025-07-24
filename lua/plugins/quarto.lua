@@ -9,7 +9,7 @@ return {
 
   lazy = true,
 
-  ft = { "quarto", "markdown", "python" },
+  ft = { "quarto" },
 
   opts = {
     debug = false,
@@ -33,14 +33,14 @@ return {
     codeRunner = {
       enabled = true,
       default_method = "slime", -- "molten", "slime", "iron" or <function>
-      ft_runners = { python = "molten" }, -- filetype to runner, ie. `{ python = "molten" }`.
+      ft_runners = { python = "slime" }, -- filetype to runner, ie. `{ python = "molten" }`.
       -- Takes precedence over `default_method`
       never_run = { "yaml" }, -- filetypes which are never sent to a code runner
     },
   },
 
   keys = {
-    { "<leader>pq", desc = "Quarto" },
+    { "<leader>pq", nil, desc = "Quarto" },
     {
       "<leader>pqp",
       function()

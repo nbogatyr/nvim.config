@@ -1,5 +1,7 @@
 return {
-  "benlubas/molten-nvim",
+  "bowentan/molten-nvim",
+  branch = "feat/add-snacks-support",
+  -- "benlubas/molten-nvim",
   enabled = true,
   ft = { "quarto" },
   version = "^1.0.0",
@@ -10,14 +12,17 @@ return {
     vim.g.molten_auto_open_output = false
 
     vim.g.molten_virt_text_output = true
-    vim.g.molten_virt_lines_off_by_1 = true
+    vim.g.molten_virt_lines_off_by_1 = false
+    vim.g.molten_cover_empty_lines = true
 
     vim.g.molten_output_show_exec_time = true
     vim.g.molten_tick_rate = 200
+
+    vim.g.molten_image_provider = "snacks.nvim"
   end,
 
   keys = {
-    { "<leader>pm", desc = "Molten" },
+    { "<leader>pm", nil, desc = "+Molten" },
     { "<leader>pmi", "<cmd>MoltenInit<cr>", desc = "Init Molten", mode = "n" },
     { "<leader>pme", "<cmd>MoltenEvaluateOperator<CR>", desc = "Evaluate Operator", silent = true, mode = "n" },
     { "<leader>pmr", "<cmd>MoltenReevaluateCell<CR>", desc = "Re-Eval Cell", silent = true, mode = "n" },

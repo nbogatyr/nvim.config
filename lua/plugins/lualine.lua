@@ -16,6 +16,12 @@ return {
       -- opts.options.component_separators = { left = "", right = "" }
       opts.options.component_separators = ""
 
+      opts.options.refresh = {
+        statusline = 100,
+        tabline = 500,
+        winbar = 100,
+      }
+
       opts.options.disabled_filetypes = {
         statusline = { "dashboard", "alpha", "snacks_dashboard", "snacks_picker_preview" },
         winbar = {
@@ -39,17 +45,18 @@ return {
 
       -- Sections
       opts.sections = {
-        lualine_a = { "mode" },
+        lualine_a = { { "mode", icon = "" } },
+
         lualine_b = {
           {
             function()
-              return vim.g.python_cur_version or require("config.extras").get_python_version()
+              return vim.g.python_venv_name .. " (" .. vim.g.python_venv_version .. ")"
             end,
             cond = function()
-              return vim.bo.filetype == "python"
+              return vim.g.python_venv_active == true
             end,
             color = "lualine_a_command",
-            icon = "",
+            icon = { "" },
             separator = { right = "" },
           },
           "branch",
@@ -62,6 +69,10 @@ return {
               info = icons.diagnostics.Info,
               hint = icons.diagnostics.Hint,
             },
+          },
+          {
+            "require('molten.status').kernels()",
+            icon = { "", color = { fg = "orange" } },
           },
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { LazyVim.lualine.pretty_path() },
@@ -90,11 +101,13 @@ return {
             cond = function() return package.loaded["dap"] and require("dap").status() ~= "" end,
             color = function() return { fg = Snacks.util.color("Debug") } end,
           },
-          -- stylua: ignore
+          -- { require("mcphub.extensions.lualine") },
           {
             require("lazy.status").updates,
             cond = require("lazy.status").has_updates,
-            color = function() return { fg = Snacks.util.color("Special") } end,
+            color = function()
+              return { fg = Snacks.util.color("Special") }
+            end,
           },
           {
             "diff",
@@ -121,7 +134,7 @@ return {
         lualine_z = {
           {
             function()
-              return " " .. os.date("%I:%M %p")
+              return "  " .. os.date("%I:%M %p")
             end,
             padding = { right = 2, left = 0 },
           },
@@ -129,42 +142,6 @@ return {
       }
 
       opts.options.always_show_tabline = false
-
-      local tabline = {
-        lualine_a = {
-
-          -- {
-          --   function()
-          --     return ""
-          --   end,
-          --   color = { bg = palette.orange[1] },
-          --   separator = { right = "" },
-          -- },
-          {
-            "filetype",
-            icon_only = true,
-            separator = "",
-            padding = { left = 1, right = 0 },
-            colored = false,
-          },
-          { "filename" },
-        },
-        lualine_b = {
-          -- {
-          --   "buffers",
-          --   show_modified_status = true,
-          --   mode = 0,
-          --   component_separators = { left = "", right = "" },
-          -- },
-        },
-        -- { "navic", color_correction = "dynamic" }
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = { { "tabs", mode = 0 } },
-      }
-      opts.winbar = tabline
-      opts.inactive_winbar = tabline
     end,
   },
 }

@@ -51,6 +51,8 @@ return {
           vim.fn["gruvbox_material#get_palette"](config.background, config.foreground, config.colors_override)
         local set_hl = vim.fn["gruvbox_material#highlight"]
 
+        set_hl("Pmenu", palette.none, palette.bg0)
+
         -- Snacks highlights
         -- Picker
         -- set_hl("SnacksPickerBoxTitle", palette.bg0, palette.orange, "bold")

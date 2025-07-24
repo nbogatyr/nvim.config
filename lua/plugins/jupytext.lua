@@ -2,6 +2,7 @@ return {
   -- Remember, this needs the 'jupytext' package for python to work
   "GCBallesteros/jupytext.nvim",
   config = true,
+  enabled = true,
   lazy = false,
   ft = { "python", "json", "markdown", "quarto" },
 

@@ -1,5 +1,6 @@
 return {
-  "nbogatyr/obsidian.nvim",
+  "obsidian-nvim/obsidian.nvim",
+  enabled = true,
   lazy = true,
   ft = "markdown",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -12,6 +13,10 @@ return {
   -- },
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "blink.cmp",
+    "snacks.nvim",
+    "nvim-treesitter",
+    -- "render-markdown.nvim",
   },
   opts = {
     workspaces = {
@@ -21,6 +26,15 @@ return {
         path = "~/notes/work",
       },
     },
+    completion = {
+      nvim_cmp = false,
+      blink = true,
+      min_chars = 2,
+    },
+
+    -- templates = {
+    --   folder = "templates",
+    -- },
 
     daily_notes = {
       folder = "dailies",
@@ -34,6 +48,12 @@ return {
         end,
         opts = { buffer = true },
       },
+      ["gf"] = {
+        action = function()
+          return require("obsidian").util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
     },
 
     follow_url_func = function(url)
@@ -41,7 +61,7 @@ return {
     end,
 
     ui = {
-      enable = false,
+      enable = true,
     },
   },
 
@@ -50,11 +70,14 @@ return {
     { "<leader>OT", "<cmd>ObsidianToday<cr>", desc = "Create a new note for today" },
     { "<leader>Ol", "<cmd>ObsidianLinks<cr>", desc = "Search links" },
     { "<leader>On", "<cmd>ObsidianNew<cr>", desc = "New note" },
-    { "<leader>Oq", "<cmd>ObsidianQuickSwitch<cr>", desc = "Switch between notes" },
+    { "<leader>O<Space>", "<cmd>ObsidianQuickSwitch<cr>", desc = "Switch between notes" },
     { "<leader>Os", "<cmd>ObsidianSearch<cr>", desc = "Search across notes" },
     { "<leader>Of", "<cmd>ObsidianTags<cr>", desc = "Find tags" },
     { "<leader>ON", "<cmd>ObsidianTomorrow<cr>", desc = "Create a new note for tomorrow" },
     { "<leader>Oy", "<cmd>ObsidianYesterday<cr>", desc = "Create a new note for yesterday" },
     { "<leader>O<tab>", "<cmd>ObsidianBacklinks<cr>", desc = "Show backlinks" },
+    { "<leader>Or", "<cmd>ObsidianRename<cr>", desc = "Rename file" },
+    { "<leader>Ow", "<cmd>ObsidianWorkspace<cr>", desc = "Switch Obsidian Workspace" },
+    { "<leader>OF", "<cmd>ObsidianTOC<cr>", desc = "Navigate TOC" },
   },
 }

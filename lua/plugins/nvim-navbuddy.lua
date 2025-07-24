@@ -1,5 +1,6 @@
 return {
   "SmiteshP/nvim-navbuddy",
+  enabled = false,
 
   lazy = true,
 
@@ -12,7 +13,6 @@ return {
   end,
 
   opts = function()
-    local navbuddy = require("nvim-navbuddy")
     local actions = require("nvim-navbuddy.actions")
 
     local opts = {

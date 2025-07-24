@@ -8,7 +8,7 @@ return {
     "nvim-lspconfig",
     event = "LazyFile",
     dependencies = {
-      "mason.nvim",
+      -- "mason.nvim",
       { "williamboman/mason-lspconfig.nvim", config = function() end },
     },
 
@@ -114,7 +114,7 @@ return {
           init_options = {
             settings = {
               fixAll = true,
-              logLevel = "info",
+              logLevel = "debug",
               organizeImports = true,
             },
           },
@@ -136,14 +136,14 @@ return {
           keys = {
             -- TODO: Improve this so it works with more than just uv - if I ever switch
             {
-              "<leader>Pb",
+              "<leader>pb",
               function()
                 require("config.extras").execute_shell_command("uvx basedpyright --writebaseline")
               end,
               desc = "Write (based)Pyright Baseline File",
             },
             {
-              "<leader>PB",
+              "<leader>pB",
               function()
                 require("config.extras").execute_shell_command("rm .basedpyright/baseline.json")
               end,
@@ -155,10 +155,9 @@ return {
 
       setup = {
         ["ruff"] = function()
-          LazyVim.lsp.on_attach(function(client, buffer)
-            -- Disable doc formatting for ruff in favor of (based)pyright
-            ---@type vim.lsp.Client
-            client.server_capabilities.document_formatting = false
+          LazyVim.lsp.on_attach(function(client, _)
+            -- Disable hover in favor of Pyright
+            client.server_capabilities.hoverProvider = false
           end, "ruff")
         end,
       },

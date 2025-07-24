@@ -45,7 +45,7 @@ g.trouble_lualine = true
 g.markdown_recommended_style = 0
 
 -- Python install
-vim.g.python3_host_prog = "/usr/bin/python3"
+vim.g.python3_host_prog = "/home/nbogatyr/.local/share/uv/python/cpython-3.13.2-linux-x86_64-gnu/bin/python3.13"
 
 -- ╭─────────────────────────────────────────────────────────╮
 -- │                         Options                         │

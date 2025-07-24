@@ -42,7 +42,7 @@ return {
 
       -- ─( snacks.notifier )────────────────────────────────────────────────
       notifier = {
-        enabled = false,
+        enabled = true,
         timeout = 7000,
       },
 
@@ -64,20 +64,22 @@ return {
               box = "vertical",
               width = 0.8,
               height = 0.8,
-              border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+              backdrop = false,
+              border = "none",
               {
                 win = "input",
                 height = 1,
-                border = "single",
+                backdrop = true,
+                border = "rounded",
                 title = "Find {title} {live} {flags}",
                 title_pos = "center",
               },
               {
                 box = "horizontal",
-                { win = "list", border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" } },
+                { win = "list", border = "rounded" },
                 {
                   win = "preview",
-                  border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
+                  border = "rounded",
                   width = 0.6,
                 },
               },
@@ -125,17 +127,18 @@ return {
             layout = {
               box = "vertical",
               width = 0.8,
+              backdrop = false,
               height = 0.9,
               border = "none",
               {
                 win = "input",
-                border = "single",
+                border = "rounded",
                 height = 1,
                 title = "Find {title} {live} {flags}",
                 title_pos = "center",
               },
-              { win = "list", border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }, height = 15 },
-              { win = "preview", border = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" } },
+              { win = "list", border = "rounded", height = 15 },
+              { win = "preview", border = "rounded" },
             },
           },
         },
@@ -337,6 +340,14 @@ return {
           Snacks.terminal.toggle()
         end,
         desc = "Toggle Terminal",
+        mode = "n",
+      },
+      {
+        "<leader>Tbr",
+        function()
+          Snacks.terminal(nil, { win = { position = "botright", enter = true } })
+        end,
+        desc = "Toggle Terminal - Bot Right",
         mode = "n",
       },
     },

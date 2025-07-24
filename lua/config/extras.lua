@@ -210,4 +210,54 @@ return {
       return nil
     end
   end,
+
+  -- Provide a command to create a blank new Python notebook
+  -- note: the metadata is needed for Jupytext to understand how to parse the notebook.
+  -- if you use another language than Python, you should change it in the template.
+  create_new_notebook = function(filename)
+    local default_python_notebook = [[
+  {
+    "cells": [
+     {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        ""
+      ]
+     }
+    ],
+    "metadata": {
+     "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+     },
+     "language_info": {
+      "codemirror_mode": {
+        "name": "ipython"
+      },
+      "file_extension": ".py",
+      "mimetype": "text/x-python",
+      "name": "python",
+      "nbconvert_exporter": "python",
+      "pygments_lexer": "ipython3"
+     }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 5
+  }
+]]
+
+    local path = filename .. ".ipynb"
+    local file = io.open(path, "w")
+    if file then
+      file:write(default_python_notebook)
+      file:close()
+      vim.cmd("edit " .. path)
+    else
+      print("Error: Could not open new notebook file for writing.")
+    end
+  end,
+
+  borders = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" },
 }

@@ -21,7 +21,7 @@ return {
 
   keys = {
     { surround_prefix, desc = "Mini Surround" },
-    { surround_prefix .. "a", desc = "Add surround char" },
+    { surround_prefix .. "a", desc = "Add surround char", mode = { "n", "v" } },
     { surround_prefix .. "d", desc = "Delete surround char" },
     { surround_prefix .. "f", desc = "Find surround char" },
     { surround_prefix .. "F", desc = "Find left surround char" },
