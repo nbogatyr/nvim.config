@@ -1,16 +1,16 @@
 return {
-    "stevearc/conform.nvim",
-    enabled = true,
-    event = { "BufWritePre" },
-    cmd = { "ConformInfo" },
+  "stevearc/conform.nvim",
+  enabled = true,
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
 
-    opts = {
-        notify_on_error = true,
-        notify_no_formatters = true,
+  opts = {
+    notify_on_error = true,
+    notify_no_formatters = true,
 
-        formatters_by_ft = {
-            python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
-            markdown = { "prettier", "markdown-toc" },
-        },
+    formatters_by_ft = {
+      python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
+      markdown = { "prettier", "markdown-toc" },
     },
+  },
 }

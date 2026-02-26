@@ -39,7 +39,6 @@ return {
       folder = "dailies",
       default_tags = { "daily-notes" },
     },
-
   },
 
   keys = {

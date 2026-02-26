@@ -48,20 +48,6 @@ vim.api.nvim_create_autocmd("ModeChanged", {
   end,
 })
 
--- Add keymap for markdown-toc to create a toc at cursor only in markdown files
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("formatters_markdown", {}),
-  pattern = { "md", "markdown" },
-  callback = function()
-    vim.schedule(function()
-      vim.keymap.set("n", "<leader>czt", function()
-        require("config.extras").insert_at_start_of_line("<!-- toc -->")
-        require("conform").format({ timeout_ms = 500 })
-      end, { desc = "Creates a table of contents for the current markdown buffer using markdown-toc" })
-    end)
-  end,
-})
-
 -- Add keymap for CsvView keymaps so that they only trigger in CSV files
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("formatters_csv", {}),
@@ -77,12 +63,3 @@ vim.api.nvim_create_autocmd("FileType", {
     end)
   end,
 })
-
--- Force tabline to always show no matter what
--- vim.api.nvim_create_autocmd("BufEnter", {
---   callback = function()
---     vim.schedule(function()
---       vim.opt.showtabline = 2
---     end)
---   end,
--- })
