@@ -2,12 +2,12 @@ return {
   {
     "GCBallesteros/NotebookNavigator.nvim",
     lazy = true,
-    enabled = true,
+    enabled = false,
 
     ft = { "python" },
 
     dependencies = {
-      "echasnovski/mini.comment",
+      "nvim-mini/mini.comment",
       -- "Vigemus/iron.nvim", -- repl provider
       -- "akinsho/toggleterm.nvim", -- alternative repl provider
       "molten-nvim", -- alternative repl provider
@@ -118,17 +118,17 @@ return {
       })
     end,
   },
-  {
-    "echasnovski/mini.ai",
-    lazy = true,
-    opts = function(_, opts)
-      local nn = require("notebook-navigator")
-
-      -- Extend the opts.custom_textobjects if it exists
-      opts.custom_textobjects = {}
-
-      opts.custom_textobjects.h = nn.miniai_spec
-      return opts
-    end,
-  },
+  -- {
+  --   "nvim-mini/mini.ai",
+  --   lazy = true,
+  --   opts = function(_, opts)
+  --     local nn = require("notebook-navigator")
+  --
+  --     -- Extend the opts.custom_textobjects if it exists
+  --     opts.custom_textobjects = {}
+  --
+  --     opts.custom_textobjects.h = nn.miniai_spec
+  --     return opts
+  --   end,
+  -- },
 }
