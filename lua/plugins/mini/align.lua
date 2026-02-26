@@ -3,7 +3,7 @@ local start_keymap = "<leader>cLa"
 
 return {
   -- TODO: Fix interactions with snacks notifier
-  "echasnovski/mini.align",
+  "nvim-mini/mini.align",
   enabled = true,
   version = false,
   opts = {

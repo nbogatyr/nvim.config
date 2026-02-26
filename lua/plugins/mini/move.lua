@@ -2,7 +2,7 @@ local move_prefix = "M-"
 local move_keys = { "h", "j", "k", "l" }
 
 return {
-  "echasnovski/mini.move",
+  "nvim-mini/mini.move",
   version = false,
   lazy = true,
   -- event = "VeryLazy",

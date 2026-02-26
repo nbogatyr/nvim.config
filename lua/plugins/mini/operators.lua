@@ -1,6 +1,6 @@
 return {
   event = "VeryLazy",
-  "echasnovski/mini.operators",
+  "nvim-mini/mini.operators",
   opts = {
     multiply = {
       prefix = "",

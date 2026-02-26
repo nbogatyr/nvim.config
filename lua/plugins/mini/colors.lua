@@ -1,1 +1,1 @@
-return { "echasnovski/mini.colors", version = false, enabled = false }
+return { "nvim-mini/mini.colors", version = false, enabled = false }

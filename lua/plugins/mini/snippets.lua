@@ -1,5 +1,5 @@
 return {
-  "echasnovski/mini.snippets",
+  "nvim-mini/mini.snippets",
   enabled = false,
   event = "InsertEnter",
   dependencies = "rafamadriz/friendly-snippets",
