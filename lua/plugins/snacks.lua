@@ -5,7 +5,7 @@ return {
 
     init = function()
       -- Enable snacks animate by default
-      vim.g.snacks_animate = true
+      vim.g.snacks_animate = false
     end,
 
     opts = {

@@ -1,8 +1,13 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.ai.sidekick",
+    "lazyvim.plugins.extras.editor.dial",
     "lazyvim.plugins.extras.editor.inc-rename",
-    "lazyvim.plugins.extras.test.core"
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.toml",
+    "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.ui.edgy"
   ],
   "install_version": 8,
   "news": {
